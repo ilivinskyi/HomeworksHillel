@@ -1,9 +1,11 @@
-import car.Car;
-import employee.Employee;
-import one.SameName;
+package homework2;
 
-public class Main {
-    public static void main(String[] args) {
+import homework2.car.Car;
+import homework2.employee.Employee;
+import homework2.one.SameName;
+
+public class HomeWorkTwo {
+    public void runHomeWork() {
         Employee employee = new Employee(
                 "John Doe",
                 "Support Engineer",
@@ -14,7 +16,7 @@ public class Main {
         System.out.println(employee);
 
         SameName sameNameOne = new SameName();
-        two.SameName sameNameTwo = new two.SameName();
+        homework2.two.SameName sameNameTwo = new homework2.two.SameName();
 
         sameNameOne.print();
         sameNameTwo.print();
