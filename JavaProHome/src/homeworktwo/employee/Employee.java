@@ -1,4 +1,4 @@
-package homework2.employee;
+package homeworktwo.employee;
 
 public class Employee {
 

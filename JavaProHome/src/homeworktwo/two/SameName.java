@@ -1,4 +1,4 @@
-package homework2.two;
+package homeworktwo.two;
 
 public class SameName {
     public void print() {
