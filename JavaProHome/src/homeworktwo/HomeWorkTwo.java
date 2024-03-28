@@ -1,8 +1,8 @@
-package homework2;
+package homeworktwo;
 
-import homework2.car.Car;
-import homework2.employee.Employee;
-import homework2.one.SameName;
+import homeworktwo.car.Car;
+import homeworktwo.employee.Employee;
+import homeworktwo.one.SameName;
 
 public class HomeWorkTwo {
     public void runHomeWork() {
@@ -16,7 +16,7 @@ public class HomeWorkTwo {
         System.out.println(employee);
 
         SameName sameNameOne = new SameName();
-        homework2.two.SameName sameNameTwo = new homework2.two.SameName();
+        homeworktwo.two.SameName sameNameTwo = new homeworktwo.two.SameName();
 
         sameNameOne.print();
         sameNameTwo.print();
