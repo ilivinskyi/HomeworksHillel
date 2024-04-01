@@ -1,48 +1,105 @@
-import homeworkfour.taskone.*;
-import homeworkfour.taskzero.Circle;
-import homeworkfour.taskzero.GeometricFigure;
-import homeworkfour.taskzero.Square;
-import homeworkfour.taskzero.Triangle;
+import homeworkfive.phonebook.Entry;
+import homeworkfive.phonebook.Phonebook;
 
+import java.util.*;
 
 public class Main {
-    // Загальна площа фігур
+    // 1
     public static void main(String[] args) {
-        /// Total square of geometric figures
-        GeometricFigure[] figures = new GeometricFigure[] {
-                new Circle(10),
-                new Triangle(6, 8),
-                new Square(5)
-        };
-        System.out.println("Total area: " + calculateTotalArea(figures));
+        List<String> words = List.of("dog", "cat", "cat", "bird", "camel", "elephant", "cat");
+        int count = countOccurrence(words, "cat");
+        System.out.println(count);
 
-        /// Sport competition
-        Participant[] participants = {
-                new Human("Євген", 150, 2),
-                new Cat("Пушок", 110, 1),
-                new Robot("R2D2", 50, 4)
-        };
+        // 2
+        int[] array = {1, 2, 3};
+        List<Integer> list = toList(array);
+        System.out.println(list);
 
-        Obstacle[] obstacles = {
-                new RunningTrack(100),
-                new Wall(2)
-        };
+        // 3
+        List<Integer> numbers = List.of(1, 2, 2, 3, 4, 4, 5, 6, 6, 7);
+        List<Integer> uniqueNumbers = findUnique(numbers);
+        System.out.println(uniqueNumbers);
 
-        for (Participant participant : participants) {
-            for (Obstacle obstacle : obstacles) {
-                participant.setObstacle(obstacle);
-                if (!obstacle.overcome(participant)) {
-                    break;
-                }
-            }
+        // 4
+        List<String> animals = List.of("bird", "fox", "bird", "cat", "dog", "cat", "dog", "dog");
+        calcOccurance(animals);
+
+        // 5
+        List<String> newAnimals = List.of("bird", "fox", "bird", "cat", "dog", "cat", "dog", "dog");
+        List<Map<String, Object>> occurrences = findOccurrence(newAnimals);
+        for (Map<String, Object> occurrence : occurrences) {
+            System.out.println(occurrence);
+        }
+
+        // 6
+        Phonebook phonebook = new Phonebook();
+        List<Entry> testEntries = Arrays.asList(
+                new Entry("Alice", "123-456-7890"),
+                new Entry("Bob", "987-654-3210"),
+                new Entry("Charlie", "555-666-7777"),
+                new Entry("David", "222-333-4444"),
+                new Entry("Eve", "999-888-7777"),
+                new Entry("Alice", "111-222-3333")
+        );
+        for (Entry entry : testEntries) {
+            phonebook.add(entry);
+        }
+        System.out.println(phonebook.find("Bob").getPhone());
+        System.out.println(phonebook.find("Alice").getPhone());
+        System.out.println(phonebook.findAll("Alice").size());
+
+    }
+
+    public static int countOccurrence(List<String> words, String target) {
+        int count = 0;
+        for (String word : words) {
+            if (word.equals(target)) {
+                count++;
+        }
+    }
+        return count;
+    }
+
+    public static List<Integer> toList(int[] array) {
+        List<Integer> list = new ArrayList<>();
+        for (int i : array) {
+            list.add(i);
+        }
+        return list;
+    }
+
+    public static List<Integer> findUnique(List<Integer> list) {
+        Set<Integer> set = new HashSet<>(list);
+        return new ArrayList<>(set);
+    }
+
+    public static void calcOccurance(List<String> words) {
+        Map<String, Integer> wordCount = new HashMap<>();
+
+        for (String word : words) {
+            wordCount.put(word, wordCount.getOrDefault(word, 0) + 1);
+        }
+
+        for (Map.Entry<String, Integer> entry : wordCount.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
         }
     }
 
-    public static double calculateTotalArea(GeometricFigure[] figures) {
-        double totalArea = 0;
-        for (GeometricFigure figure : figures) {
-            totalArea += figure.getArea();
+    public static List<Map<String, Object>> findOccurrence(List<String> words) {
+        Map<String, Integer> wordCount = new HashMap<>();
+        List<Map<String, Object>> resultList = new ArrayList<>();
+
+        for (String word : words) {
+            wordCount.put(word, wordCount.getOrDefault(word, 0) + 1);
         }
-        return totalArea;
+
+        wordCount.forEach((word, count) -> {
+            Map<String, Object> occurrence = new HashMap<>();
+            occurrence.put("name", word);
+            occurrence.put("occurrence", count);
+            resultList.add(occurrence);
+        });
+
+        return resultList;
     }
 }
