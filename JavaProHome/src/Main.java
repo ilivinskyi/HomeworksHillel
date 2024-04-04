@@ -11,9 +11,9 @@ public class Main {
         System.out.println(count);
 
         // 2
-        int[] array = {1, 2, 3};
-        List<Integer> list = toList(array);
-        System.out.println(list);
+        int[] intArray = {1, 2, 3};
+        List<Integer> integerList = toList(intArray);
+        System.out.println(integerList);
 
         // 3
         List<Integer> numbers = List.of(1, 2, 2, 3, 4, 4, 5, 6, 6, 7);
