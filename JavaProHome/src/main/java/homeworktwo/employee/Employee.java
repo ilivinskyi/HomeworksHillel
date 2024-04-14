@@ -9,13 +9,7 @@ public class Employee {
     private int age;
 
     // Конструктор
-    public Employee(
-            String fullName,
-            String position,
-            String email,
-            String phoneNumber,
-            int age
-    ) {
+    public Employee(String fullName, String position, String email, String phoneNumber, int age) {
         this.fullName = fullName;
         this.position = position;
         this.email = email;

@@ -13,73 +13,41 @@
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    <dependencies>
-        <dependency>
-            <groupId>com.diffplug.spotless</groupId>
-            <artifactId>spotless-maven-plugin</artifactId>
-            <version>2.43.0</version>
-        </dependency>
-    </dependencies>
     <build>
         <plugins>
             <plugin>
                 <groupId>com.diffplug.spotless</groupId>
                 <artifactId>spotless-maven-plugin</artifactId>
-                <version>2.43.0</version>
+                <version>2.41.1</version>
                 <configuration>
                     <formats>
-                        <!-- prettier with java-plugin -->
                         <format>
                             <includes>
                                 <include>src/*/java/**/*.java</include>
                             </includes>
-
                             <prettier>
                                 <devDependencies>
-                                    <prettier>2.8.8</prettier>
-                                    <prettier-plugin-java>2.2.0</prettier-plugin-java>
+                                    <prettier>2.5.1</prettier>
+                                    <prettier-plugin-java>1.6.1</prettier-plugin-java>
                                 </devDependencies>
                                 <config>
+                                    <!-- Changes here must be reflected in .prettierrc.yml -->
                                     <tabWidth>4</tabWidth>
-                                    <parser>java</parser>
-                                    <plugins>prettier-plugin-java
-                                    </plugins><!-- this is only for prettier 3.0.0 and above: an additional 'plugins' config element is required -->
+                                    <printWidth>100</printWidth>
+                                    <trailingComma>none</trailingComma>
                                 </config>
                             </prettier>
                         </format>
-
-                        <!-- prettier with php-plugin -->
-                        <format>
-                            <includes>
-                                <include>src/**/*.php</include>
-                            </includes>
-
-                            <prettier>
-                                <!-- use the devDependencyProperties writing style when the property-names are not well-formed such as @prettier/plugin-php -->
-                                <devDependencyProperties>
-                                    <property>
-                                        <name>prettier</name>
-                                        <value>2.8.8</value>
-                                    </property>
-                                    <property>
-                                        <name>@prettier/plugin-php</name>
-                                        <value>0.19.6</value>
-                                    </property>
-                                </devDependencyProperties>
-                                <config>
-                                    <tabWidth>3</tabWidth>
-                                    <parser>php</parser>
-                                    <plugins>@prettier/plugin-php
-                                    </plugins><!-- this is only for prettier 3.0.0 and above: an additional 'plugins' config element is required -->
-                                </config>
-                            </prettier>
-                        </format>
-
                     </formats>
                 </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
-
-
 </project>
