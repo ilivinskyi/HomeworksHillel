@@ -19,9 +19,7 @@ public abstract class Participant {
             System.out.println(overcomeSuccessMessage(distance));
             return true;
         } else {
-            System.out.println(
-                    overcomeFailureMessage(distance, maxRunDistance)
-            );
+            System.out.println(overcomeFailureMessage(distance, maxRunDistance));
             return false;
         }
     }

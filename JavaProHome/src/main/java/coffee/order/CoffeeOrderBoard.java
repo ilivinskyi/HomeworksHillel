@@ -13,11 +13,7 @@ public class CoffeeOrderBoard {
         Order newOrder = new Order(++lastOrderNumber, customerName);
         orders.add(newOrder);
         System.out.println(
-                "Order #" +
-                        newOrder.getOrderNumber() +
-                        " for " +
-                        newOrder.getCustomerName() +
-                        " added"
+                "Order #" + newOrder.getOrderNumber() + " for " + newOrder.getCustomerName() + " added"
         );
         return newOrder;
     }
@@ -28,9 +24,7 @@ public class CoffeeOrderBoard {
             return null;
         }
         var deliveredOrder = orders.removeFirst();
-        System.out.println(
-                "Order #" + deliveredOrder.getOrderNumber() + " delivered"
-        );
+        System.out.println("Order #" + deliveredOrder.getOrderNumber() + " delivered");
         return deliveredOrder;
     }
 
@@ -40,9 +34,7 @@ public class CoffeeOrderBoard {
             Order order = iterator.next();
             if (order.getOrderNumber() == orderNumber) {
                 iterator.remove();
-                System.out.println(
-                        "Order #" + order.getOrderNumber() + " delivered"
-                );
+                System.out.println("Order #" + order.getOrderNumber() + " delivered");
                 return order;
             }
         }
@@ -53,9 +45,7 @@ public class CoffeeOrderBoard {
         System.out.println("=============");
         System.out.println("Num | Name");
         for (Order order : orders) {
-            System.out.println(
-                    order.getOrderNumber() + " | " + order.getCustomerName()
-            );
+            System.out.println(order.getOrderNumber() + " | " + order.getCustomerName());
         }
         System.out.println("=============");
     }

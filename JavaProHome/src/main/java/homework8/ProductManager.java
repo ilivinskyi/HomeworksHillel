@@ -19,24 +19,17 @@ public class ProductManager {
         products.add(product);
     }
 
-    public List<Product> getProductsByTypeWithPriceHigherThan(
-            String type,
-            Double price
-    ) {
+    public List<Product> getProductsByTypeWithPriceHigherThan(String type, Double price) {
         return products
                 .stream()
-                .filter(product ->
-                        product.getType().equals(type) && product.getPrice() > price
-                )
+                .filter(product -> product.getType().equals(type) && product.getPrice() > price)
                 .toList();
     }
 
     public List<Product> getDiscountedProductsWithType(String type) {
         return products
                 .stream()
-                .filter(product ->
-                        product.getType().equals(type) && product.getDiscountable()
-                )
+                .filter(product -> product.getType().equals(type) && product.getDiscountable())
                 .map(product -> {
                     double discountedPrice = product.getPrice() * 0.9;
                     product.setPrice(discountedPrice);
@@ -45,16 +38,13 @@ public class ProductManager {
                 .toList();
     }
 
-    public Product getCheapestProduct(String type)
-            throws NoSuchElementException {
+    public Product getCheapestProduct(String type) throws NoSuchElementException {
         Optional<Product> cheapestBook = products
                 .stream()
                 .filter(product -> product.getType().equals(type))
                 .min(Comparator.comparingDouble(Product::getPrice));
         if (cheapestBook.isEmpty()) {
-            throw new NoSuchElementException(
-                    "Продукт [категорія: " + type + "] не знайдено"
-            );
+            throw new NoSuchElementException("Продукт [категорія: " + type + "] не знайдено");
         }
         return cheapestBook.get();
     }
@@ -67,24 +57,13 @@ public class ProductManager {
                 .toList();
     }
 
-    public Double getThisYearProductsTotalPriceWithPriceLowerThanSpecified(
-            Double maxPrice
-    ) {
+    public Double getThisYearProductsTotalPriceWithPriceLowerThanSpecified(Double maxPrice) {
         return products
                 .stream()
                 .filter(product ->
                         product
                                 .getCreatedOn()
-                                .isAfter(
-                                        LocalDateTime.of(
-                                                2024,
-                                                Month.from(Month.JANUARY),
-                                                1,
-                                                0,
-                                                0,
-                                                0
-                                        )
-                                ) &&
+                                .isAfter(LocalDateTime.of(2024, Month.from(Month.JANUARY), 1, 0, 0, 0)) &&
                                 product.getPrice() < maxPrice
                 )
                 .mapToDouble(Product::getPrice)
@@ -92,8 +71,6 @@ public class ProductManager {
     }
 
     public Map<String, List<Product>> groupProductsByType() {
-        return products
-                .stream()
-                .collect(Collectors.groupingBy(Product::getType));
+        return products.stream().collect(Collectors.groupingBy(Product::getType));
     }
 }

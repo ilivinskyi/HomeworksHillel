@@ -79,9 +79,7 @@ public class Main {
                         .setType("Electronics")
                         .setPrice(400.0)
                         .setDiscountable(false)
-                        .setCreatedOn(
-                                LocalDateTime.of(2024, Month.APRIL, 14, 12, 30, 15)
-                        )
+                        .setCreatedOn(LocalDateTime.of(2024, Month.APRIL, 14, 12, 30, 15))
                         .createProduct()
         );
         manager.addProduct(
@@ -89,9 +87,7 @@ public class Main {
                         .setType("Book")
                         .setPrice(260.0)
                         .setDiscountable(true)
-                        .setCreatedOn(
-                                LocalDateTime.of(2024, Month.JANUARY, 1, 10, 10, 30)
-                        )
+                        .setCreatedOn(LocalDateTime.of(2024, Month.JANUARY, 1, 10, 10, 30))
                         .createProduct()
         );
         manager.addProduct(
@@ -99,53 +95,35 @@ public class Main {
                         .setType("Book")
                         .setPrice(1.0)
                         .setDiscountable(true)
-                        .setCreatedOn(
-                                LocalDateTime.of(2023, Month.FEBRUARY, 24, 12, 33, 05)
-                        )
+                        .setCreatedOn(LocalDateTime.of(2023, Month.FEBRUARY, 24, 12, 33, 05))
                         .createProduct()
         );
 
-        List<Product> filteredByPriceBooks =
-                manager.getProductsByTypeWithPriceHigherThan("Book", 250.0);
+        List<Product> filteredByPriceBooks = manager.getProductsByTypeWithPriceHigherThan(
+                "Book",
+                250.0
+        );
         System.out.println("Books with the price higher than 250:");
         for (Product book : filteredByPriceBooks) {
-            System.out.println(
-                    "Type: " +
-                            book.getType() +
-                            ", Price: " +
-                            book.getPrice() +
-                            " EUR"
-            );
+            System.out.println("Type: " + book.getType() + ", Price: " + book.getPrice() + " EUR");
         }
 
-        List<Product> discountedBooks = manager.getDiscountedProductsWithType(
-                "Book"
-        );
+        List<Product> discountedBooks = manager.getDiscountedProductsWithType("Book");
         System.out.println("Get books with discount:");
         for (Product book : discountedBooks) {
-            System.out.println(
-                    "Type: " +
-                            book.getType() +
-                            ", Price: " +
-                            book.getPrice() +
-                            "EUR "
-            );
+            System.out.println("Type: " + book.getType() + ", Price: " + book.getPrice() + "EUR ");
         }
 
         try {
             Product cheapestBook = manager.getCheapestProduct("Cat");
-            System.out.println(
-                    "Cheapest book price: " + cheapestBook.getPrice()
-            );
+            System.out.println("Cheapest book price: " + cheapestBook.getPrice());
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }
 
         try {
             Product cheapestBook = manager.getCheapestProduct("Book");
-            System.out.println(
-                    "Cheapest book price: " + cheapestBook.getPrice()
-            );
+            System.out.println("Cheapest book price: " + cheapestBook.getPrice());
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }
@@ -155,11 +133,7 @@ public class Main {
             System.out.println(latestBook.getCreatedOn());
         }
 
-        System.out.println(
-                manager.getThisYearProductsTotalPriceWithPriceLowerThanSpecified(
-                        75.0
-                )
-        );
+        System.out.println(manager.getThisYearProductsTotalPriceWithPriceLowerThanSpecified(75.0));
         var sortedProducts = manager.groupProductsByType();
         System.out.println(sortedProducts.toString());
     }

@@ -10,12 +10,7 @@ public class Product {
     private LocalDateTime createdOn;
     private Integer id;
 
-    public Product(
-            String type,
-            Double price,
-            boolean discountable,
-            LocalDateTime createdOn
-    ) {
+    public Product(String type, Double price, boolean discountable, LocalDateTime createdOn) {
         this.type = type;
         this.price = price;
         this.discountable = discountable;
