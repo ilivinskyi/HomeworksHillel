@@ -19,7 +19,7 @@ public class ProductManager {
         products.add(product);
     }
 
-    public List<Product> getProductsByTypeWithPriceHigherThan(String type, Double price) {
+    public List<Product> getProductsByTypeWithPriceGT(String type, Double price) {
         return products
                 .stream()
                 .filter(product -> product.getType().equals(type) && product.getPrice() > price)

@@ -99,7 +99,7 @@ public class Main {
                         .createProduct()
         );
 
-        List<Product> filteredByPriceBooks = manager.getProductsByTypeWithPriceHigherThan(
+        List<Product> filteredByPriceBooks = manager.getProductsByTypeWithPriceGT(
                 "Book",
                 250.0
         );
