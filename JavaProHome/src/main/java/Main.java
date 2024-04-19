@@ -1,36 +1,35 @@
-import java.util.HashSet;
+import homeworkexceptions.ArrayDataException;
+import homeworkexceptions.ArraySizeException;
+import homeworkexceptions.ArrayValueCalculator;
 
 public class Main {
 
+    static String[][] validTestArray = {
+        { "1", "2", "3", "4" },
+        { "5", "6", "7", "8" },
+        { "9", "10", "11", "12" },
+        { "13", "14", "15", "16" }
+    };
+
+    static String[][] invalidTestArray = {
+        { "1", "2", "3", "4" },
+        { "5", "6", "7", "8" },
+        { "9", "10", "wow", "12" },
+        { "13", "14", "15", "16" }
+    };
+
     public static void main(String[] args) {
-        int[] testOne = {1, 2, 3};
-        int[] testTwo = {1, 2, 3, 3};
-        int[] testThree = {1, 1, 1, 3, 3, 4, 3, 2, 4, 2};
-
-        System.out.println(containsDuplicate(testOne));
-        System.out.println(containsDuplicate(testTwo));
-        System.out.println(containsDuplicate(testThree));
-
-        System.out.println(isPalindrome("A man, a plan, a canal: Panama"));
-        System.out.println(isPalindrome("race a car"));
-    }
-
-    public static boolean containsDuplicate(int[] nums) {
-        var set = new HashSet<Integer>();
-        for (int item : nums) {
-            if (!set.add(item)) {
-                return true;
-            }
+        var arrayCalc = new ArrayValueCalculator();
+        try {
+            System.out.println("Sum of elements: " + arrayCalc.doCalc(validTestArray));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
-        return false;
-    }
 
-    public static boolean isPalindrome(String s) {
-        if (s.isEmpty()) {
-            return false;
+        try {
+            System.out.println("Sum of elements: " + arrayCalc.doCalc(invalidTestArray));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
-        var inputString = s.toLowerCase().replaceAll("[^a-zA-Z0-9]", "");
-        var reversedString = new StringBuilder(inputString).reverse().toString();
-        return inputString.equals(reversedString);
     }
 }
