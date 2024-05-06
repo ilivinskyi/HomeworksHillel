@@ -1,10 +1,15 @@
-import textdataparser.BookParserCLI;
+import calc.Calc;
 
 public class Main {
 
-    static BookParserCLI cli = new BookParserCLI();
-
     public static void main(String[] args) {
-        cli.run();
+        var calculator = new Calc();
+        try {
+            System.out.println(calculator.calculate(args[0], args[1], args[2]));
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println(
+                "Please check number of input parameters. " + e.getLocalizedMessage()
+            );
+        }
     }
 }
