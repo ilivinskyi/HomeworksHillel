@@ -1,15 +1,15 @@
-import calc.Calc;
+import sockets.SocketServer;
+
+import java.io.IOException;
 
 public class Main {
 
     public static void main(String[] args) {
-        var calculator = new Calc();
+        var server = new SocketServer();
         try {
-            System.out.println(calculator.calculate(args[0], args[1], args[2]));
-        } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println(
-                "Please check number of input parameters. " + e.getLocalizedMessage()
-            );
+            server.startServer();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }
