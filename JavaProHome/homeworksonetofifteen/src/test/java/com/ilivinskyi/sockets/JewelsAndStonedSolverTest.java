@@ -1,4 +1,4 @@
-package unittesting;
+package com.ilivinskyi.sockets;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
