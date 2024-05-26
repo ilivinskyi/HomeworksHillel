@@ -1,6 +1,12 @@
-package main.java.models;
+package com.ilivinskyi.models;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
 public class Animal {
+
     private String name;
     private String breed;
     private int age;
@@ -13,36 +19,10 @@ public class Animal {
         this.age = age;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getBreed() {
-        return breed;
-    }
-
-    public void setBreed(String breed) {
-        this.breed = breed;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
     @Override
     public String toString() {
-        return "Animal{" +
-                "name='" + name + '\'' +
-                ", breed='" + breed + '\'' +
-                ", age=" + age +
-                '}';
+        return (
+                "Animal{" + "name='" + name + '\'' + ", breed='" + breed + '\'' + ", age=" + age + '}'
+        );
     }
 }
