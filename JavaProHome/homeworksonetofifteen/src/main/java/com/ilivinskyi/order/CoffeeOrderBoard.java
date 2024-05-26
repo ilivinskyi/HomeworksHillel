@@ -13,7 +13,7 @@ public class CoffeeOrderBoard {
         Order newOrder = new Order(++lastOrderNumber, customerName);
         orders.add(newOrder);
         System.out.println(
-                "Order #" + newOrder.getOrderNumber() + " for " + newOrder.getCustomerName() + " added"
+            "Order #" + newOrder.getOrderNumber() + " for " + newOrder.getCustomerName() + " added"
         );
         return newOrder;
     }

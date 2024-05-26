@@ -1,4 +1,4 @@
-package textdataparser;
+package com.ilivinskyi.textdataparser;
 
 public enum FileManagerConstants {
     DIRECTORY("src/"),

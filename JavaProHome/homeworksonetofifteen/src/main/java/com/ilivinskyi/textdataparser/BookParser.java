@@ -1,4 +1,4 @@
-package textdataparser;
+package com.ilivinskyi.textdataparser;
 
 import java.util.HashSet;
 import java.util.Map;
@@ -15,15 +15,15 @@ public class BookParser {
 
     public Map<String, Long> getMostPopularWords(int numberOfWords) {
         return book
-                .bookContent()
-                .stream()
-                .filter(w -> w.length() > 2)
-                .collect(Collectors.groupingBy(w -> w, Collectors.counting()))
-                .entrySet()
-                .stream()
-                .sorted(Map.Entry.<String, Long>comparingByValue().reversed())
-                .limit(numberOfWords)
-                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+            .bookContent()
+            .stream()
+            .filter(w -> w.length() > 2)
+            .collect(Collectors.groupingBy(w -> w, Collectors.counting()))
+            .entrySet()
+            .stream()
+            .sorted(Map.Entry.<String, Long>comparingByValue().reversed())
+            .limit(numberOfWords)
+            .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
     }
 
     public int getNumberOfUniqueWords() {

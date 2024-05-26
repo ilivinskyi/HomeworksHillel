@@ -52,19 +52,19 @@ public class Product {
     @Override
     public String toString() {
         return (
-                "Product{" +
-                        "type='" +
-                        type +
-                        '\'' +
-                        ", price=" +
-                        price +
-                        ", discountable=" +
-                        discountable +
-                        ", createdOn=" +
-                        createdOn +
-                        ", id=" +
-                        id +
-                        '}'
+            "Product{" +
+            "type='" +
+            type +
+            '\'' +
+            ", price=" +
+            price +
+            ", discountable=" +
+            discountable +
+            ", createdOn=" +
+            createdOn +
+            ", id=" +
+            id +
+            '}'
         );
     }
 }

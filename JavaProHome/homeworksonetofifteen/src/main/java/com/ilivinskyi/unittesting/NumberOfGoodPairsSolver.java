@@ -1,4 +1,4 @@
-package unittesting;
+package com.ilivinskyi.unittesting;
 
 public class NumberOfGoodPairsSolver {
 

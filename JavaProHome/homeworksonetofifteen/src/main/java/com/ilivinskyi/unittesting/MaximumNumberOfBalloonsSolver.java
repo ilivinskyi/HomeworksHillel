@@ -1,4 +1,4 @@
-package unittesting;
+package com.ilivinskyi.unittesting;
 
 import java.util.HashMap;
 

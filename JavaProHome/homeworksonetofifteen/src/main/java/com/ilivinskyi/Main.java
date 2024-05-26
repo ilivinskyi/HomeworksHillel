@@ -1,7 +1,7 @@
 package com.ilivinskyi;
 
-import unittesting.JewelsAndStonedSolver;
-import unittesting.NumberOfGoodPairsSolver;
+import com.ilivinskyi.unittesting.JewelsAndStonedSolver;
+import com.ilivinskyi.unittesting.NumberOfGoodPairsSolver;
 
 public class Main {
 
@@ -13,7 +13,7 @@ public class Main {
         // Number of good pairs
         var numberOfGoodPairsSolver = new NumberOfGoodPairsSolver();
         System.out.println(
-                numberOfGoodPairsSolver.numIdenticalPairs(new int[]{1, 2, 3, 1, 1, 3})
+            numberOfGoodPairsSolver.numIdenticalPairs(new int[] { 1, 2, 3, 1, 1, 3 })
         );
     }
 }

@@ -40,25 +40,25 @@ public abstract class Participant {
 
     private String overcomeSuccessMessage(int distance) {
         return (
-                "Учасник " +
-                        name +
-                        " пройшов перешкоду " +
-                        obstacle.toString().toLowerCase() +
-                        " на дистанції " +
-                        distance
+            "Учасник " +
+            name +
+            " пройшов перешкоду " +
+            obstacle.toString().toLowerCase() +
+            " на дистанції " +
+            distance
         );
     }
 
     private String overcomeFailureMessage(int distance, int passedDistance) {
         return (
-                "Учасник " +
-                        name +
-                        " не пройшов перешкоду " +
-                        obstacle.toString().toLowerCase() +
-                        " на дистанції " +
-                        distance +
-                        ". Пройдено " +
-                        passedDistance
+            "Учасник " +
+            name +
+            " не пройшов перешкоду " +
+            obstacle.toString().toLowerCase() +
+            " на дистанції " +
+            distance +
+            ". Пройдено " +
+            passedDistance
         );
     }
 }

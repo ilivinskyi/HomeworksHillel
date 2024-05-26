@@ -30,12 +30,12 @@ public class Solutions {
         for (int i = 0; i < nums.length; i++) {
             int complement = target - nums[i];
             if (numMap.containsKey(complement)) {
-                return new int[]{numMap.get(complement), i};
+                return new int[] { numMap.get(complement), i };
             }
             numMap.put(nums[i], i);
         }
         // we need to return something,
         // the task guarantee us that there will be a solution always
-        return new int[]{-1, -1};
+        return new int[] { -1, -1 };
     }
 }

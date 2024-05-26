@@ -8,11 +8,11 @@ public class HomeWorkTwo {
 
     public void runHomeWork() {
         Employee employee = new Employee(
-                "John Doe",
-                "Support Engineer",
-                "john.doe@mail.com",
-                "+1234567890",
-                32
+            "John Doe",
+            "Support Engineer",
+            "john.doe@mail.com",
+            "+1234567890",
+            32
         );
         System.out.println(employee);
 

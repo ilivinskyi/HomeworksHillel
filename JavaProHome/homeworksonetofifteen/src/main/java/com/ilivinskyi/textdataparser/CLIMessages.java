@@ -1,11 +1,11 @@
-package textdataparser;
+package com.ilivinskyi.textdataparser;
 
 public enum CLIMessages {
     HELLO("Welcome to the book statistics parser."),
     HELP("Type '!quit' or send empty line to stop the app."),
     GOODBYE("Goodbye!"),
     DO_YOU_WANT_TO_CONTINUE(
-            "Type 'next' if you want to continue, any other input will close the app."
+        "Type 'next' if you want to continue, any other input will close the app."
     ),
     STATISTICS_SAVED("Book statistics has been saved."),
     INPUT_PROMPT("Enter name of the file you want to read:"),

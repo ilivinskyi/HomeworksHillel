@@ -1,4 +1,4 @@
-package textdataparser;
+package com.ilivinskyi.textdataparser;
 
 import java.util.Scanner;
 
@@ -37,10 +37,10 @@ public class BookParserCLI {
     private void showBookStatistics(BookParser parsedBook) {
         System.out.printf(CLIMessages.WORDS_COUNT.message, parsedBook.getNumberOfWords());
         System.out.println(
-                CLIMessages.MOST_POPULAR.message + parsedBook.getMostPopularWords(10).keySet()
+            CLIMessages.MOST_POPULAR.message + parsedBook.getMostPopularWords(10).keySet()
         );
         System.out.println(
-                CLIMessages.NUMBER_OF_UNIQUE.message + parsedBook.getNumberOfUniqueWords()
+            CLIMessages.NUMBER_OF_UNIQUE.message + parsedBook.getNumberOfUniqueWords()
         );
     }
 
