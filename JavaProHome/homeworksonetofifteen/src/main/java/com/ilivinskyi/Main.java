@@ -1,3 +1,5 @@
+package com.ilivinskyi;
+
 import unittesting.JewelsAndStonedSolver;
 import unittesting.NumberOfGoodPairsSolver;
 
